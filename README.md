@@ -4,7 +4,7 @@ A simple Caddy plugin module to count the number of times a file has been access
 
 ## FrankenPHP Docker Build Example
 
-In this example, I've added the module to a [FrankenPHP](https://frankenphp.dev/) Docker container.  FrankenPHP is based on Caddy and provides a single container to use Caddy but also run PHP based websites.
+In this example, I've added the module to a [FrankenPHP](https://frankenphp.dev/) Docker container.  FrankenPHP is based on Caddy and provides a single container to use Caddy but also run PHP based websites.  You may not need some of the PHP extensions and supporting libraries.
 
 **Dockerfile:**
 ~~~
