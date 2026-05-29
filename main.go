@@ -15,6 +15,16 @@ var ctx = context.Background()
 
 func init() {
 	caddy.RegisterModule(Stats{})
+
+	// This maps the 'simple_stats' Caddyfile token to our Go block parser.
+	httpcaddyfile.RegisterHandlerDirective("simple_stats", parseCaddyfile)
+}
+
+// parseCaddyfile is a helper function that tells Caddy how to read the block
+func parseCaddyfile(h httpcaddyfile.Helper) (caddyhttp.MiddlewareHandler, error) {
+	s := new(Stats)
+	err := s.UnmarshalCaddyfile(h.Dispenser)
+	return s, err
 }
 
 type Stats struct {
