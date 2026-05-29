@@ -1,4 +1,4 @@
-module github.com/SynapseCarbon/caddy-simple-stats.git
+module github.com/SynapseCarbon/caddy-simple-stats
 
 go 1.25.0
 
