@@ -1,12 +1,12 @@
 # Overview
 
-A simple Caddy plugin module to count the number of times a file has been accessed via Caddy.
+A simple Caddy plugin module to count the number of times a file has been accessed via Caddy.  The count is kept in a Redis database (eg another Docker container).
 
-## FrankenPHP Docker Build Example
+# FrankenPHP Docker Build Example
 
 In this example, I've added the module to a [FrankenPHP](https://frankenphp.dev/) Docker container.  FrankenPHP is based on Caddy and provides a single container to use Caddy but also run PHP based websites.  You may not need some of the PHP extensions and supporting libraries.
 
-**Dockerfile:**
+## Dockerfile:
 ~~~
 # Build FrankenPHP with the custom Caddy plugins
 FROM dunglas/frankenphp:builder AS builder
@@ -87,7 +87,7 @@ http.handlers.php
 ```
 
 
-**Caddyfile**
+## Caddyfile
 
 In the global opions section:
 
@@ -134,6 +134,8 @@ https://{DOMAIN} {
 ```
 
 ## Testing
+
+Build the container using ```docker compose build```, then start it with ```docker compose up```.
 
 If everything is working and traffic is flowing to the URL been monitored for statistics, a command like below should show you the filenames and the access count:
 
